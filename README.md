@@ -1,14 +1,13 @@
 # Directus Tab Group Interface
 
+A tab group interface for Directus.
+This interface allows you to group fields into tabs as an alternative to
+the default accordion group.
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./docs/screenshot-dark.png">
   <img alt="Screenshot of the tab group interface" src="./docs/screenshot-light.png">
 </picture>
-
-## Introduction
-
-This extension provides a tab group interface as an alternative to the
-accordion group interface.
 
 ## Installation
 
