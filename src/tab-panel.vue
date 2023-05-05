@@ -1,5 +1,5 @@
 <template>
-	<div class="tab-panel">
+	<div :id="`tabpanel-${field.field}`" class="tab-panel">
 		<v-form
 			:initial-values="initialValues"
 			:fields="fieldsInSection"
@@ -20,9 +20,7 @@
 
 <script setup lang="ts">
 import { Field, ValidationError } from '@directus/types';
-import { isNil, merge } from 'lodash-es';
-import { computed, toRefs } from 'vue';
-import { useI18n } from 'vue-i18n';
+import { toRefs } from 'vue';
 import { useGroupSection } from './composables/use-group-section';
 
 const props = withDefaults(

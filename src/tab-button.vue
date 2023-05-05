@@ -1,6 +1,7 @@
 <template>
 	<v-button
 		:id="`tab-${field.field}`"
+		class="tab-button"
 		role="tab"
 		:aria-selected="active ? 'true' : 'false'"
 		:aria-controls="`tabpanel-${field.field}`"
