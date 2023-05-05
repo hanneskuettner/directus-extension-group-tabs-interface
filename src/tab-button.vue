@@ -53,11 +53,14 @@ const { t } = useI18n();
 
 	&[aria-selected='true'] {
 		--v-button-border-color: var(--background-normal-alt);
+		--v-button-background-color: var(--background-normal-alt);
+		--v-button-background-color-hover: var(--background-normal-alt);
+	}
 
-		:deep(.button) {
-			--v-button-background-color: var(--background-normal-alt);
-			--v-button-background-color-hover: var(--background-normal-alt);
-		}
+	&:not([aria-selected='true']):hover {
+		--v-button-border-color: var(--background-normal);
+		--v-button-background-color: var(--background-normal);
+		--v-button-background-color-hover: var(--background-normal);
 	}
 
 	&:hover,
@@ -76,13 +79,6 @@ const { t } = useI18n();
 	.icon {
 		color: var(--foreground-normal);
 		transition: color var(--fast) var(--transition);
-	}
-
-	.required {
-		--v-icon-color: var(--primary);
-
-		margin-top: -12px;
-		margin-left: 2px;
 	}
 
 	.v-chip {
