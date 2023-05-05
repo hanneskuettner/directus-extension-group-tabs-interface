@@ -70,9 +70,5 @@ function onKeyDown(event: KeyboardEvent) {
 	padding: 2px;
 	border-radius: var(--border-radius-outline);
 	background-color: var(--background-subdued);
-
-	.tab-button + tab-button:not(:last-child) {
-		border-left: var(--border-width) solid var(--border-normal);
-	}
 }
 </style>

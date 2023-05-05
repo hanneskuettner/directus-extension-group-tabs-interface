@@ -16,7 +16,7 @@
 
 <script lang="ts" setup>
 import { Field, ValidationError } from '@directus/types';
-import { toRef, toRefs, watch } from 'vue';
+import { toRefs } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useGroupSection } from './composables/use-group-section';
 
