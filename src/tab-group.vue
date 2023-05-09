@@ -19,7 +19,7 @@
 
 <script setup lang="ts">
 import { Field, ValidationError } from '@directus/types';
-import { computed, nextTick, ref, unref } from 'vue';
+import { ref, unref } from 'vue';
 import TabButton from './tab-button.vue';
 
 const props = defineProps<{

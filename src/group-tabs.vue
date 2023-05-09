@@ -56,8 +56,6 @@ const props = withDefaults(
 	{
 		batchActiveFields: () => [],
 		validationErrors: () => [],
-		accordionMode: true,
-		start: 'closed',
 	}
 );
 
