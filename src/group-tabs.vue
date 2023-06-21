@@ -9,7 +9,7 @@
 	>
 		<template v-for="(groupField, index) in groupFields" :key="groupField.field">
 			<tab-panel
-				v-show="activeIndex === index"
+				v-if="activeIndex === index"
 				:field="groupField"
 				:fields="fields"
 				:values="groupValues"
