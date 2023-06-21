@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/hanneskuettner/directus-extension-group-tabs-interface/compare/v1.2.0...v1.2.1) (2023-06-21)
+
+
+### Bug Fixes
+
+* Fully exclude non-active tabs from DOM instead of just hiding them (fixes [#1](https://github.com/hanneskuettner/directus-extension-group-tabs-interface/issues/1)) ([1d6ea98](https://github.com/hanneskuettner/directus-extension-group-tabs-interface/commit/1d6ea982595e019964750e2b79f35b7a70a8e63a))
+
 # [1.2.0](https://github.com/hanneskuettner/directus-extension-group-tabs-interface/compare/v1.1.0...v1.2.0) (2023-05-09)
 
 
