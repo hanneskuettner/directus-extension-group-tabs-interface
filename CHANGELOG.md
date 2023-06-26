@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/hanneskuettner/directus-extension-group-tabs-interface/compare/v1.2.1...v1.2.2) (2023-06-26)
+
+
+### Bug Fixes
+
+* tab overflow for small screen sizes ([#3](https://github.com/hanneskuettner/directus-extension-group-tabs-interface/issues/3)) ([b16b1ba](https://github.com/hanneskuettner/directus-extension-group-tabs-interface/commit/b16b1ba7b0ae40d7b96aadc49cdb7fbc6c5a02b1))
+
 ## [1.2.1](https://github.com/hanneskuettner/directus-extension-group-tabs-interface/compare/v1.2.0...v1.2.1) (2023-06-21)
 
 
