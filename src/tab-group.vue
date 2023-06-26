@@ -70,5 +70,8 @@ function onKeyDown(event: KeyboardEvent) {
 	padding: 2px;
 	border-radius: var(--border-radius-outline);
 	background-color: var(--background-subdued);
+	/* I found two solutions, personally I prefer the flex-wrap one */
+	/* overflow: scroll; */
+	flex-wrap: wrap;
 }
 </style>
