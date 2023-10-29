@@ -1,42 +1,8 @@
-<template>
-	<tab-group
-		v-model="activeIndex"
-		:tab-fields="groupFields"
-		:fields="fields"
-		:values="groupValues"
-		:validation-errors="validationErrors!"
-		class="group-tabs"
-	>
-		<template v-for="(groupField, index) in groupFields" :key="groupField.field">
-			<tab-panel
-				v-if="activeIndex === index"
-				:field="groupField"
-				:fields="fields"
-				:values="groupValues"
-				:initial-values="initialValues"
-				:disabled="disabled"
-				:batch-mode="batchMode"
-				:batch-active-fields="batchActiveFields"
-				:primary-key="primaryKey"
-				:loading="loading"
-				:validation-errors="validationErrors"
-				:badge="badge"
-				:raw-editor-enabled="rawEditorEnabled"
-				:group="field.meta.field"
-				:direction="direction"
-				@apply="$emit('apply', $event)"
-			/>
-		</template>
-	</tab-group>
-</template>
-
 <script setup lang="ts">
-import { Field, ValidationError } from '@directus/types';
-import { isEqual } from 'lodash-es';
+import type { Field, ValidationError } from '@directus/types';
 import { ref, watch } from 'vue';
 import TabGroup from './tab-group.vue';
 import TabPanel from './tab-panel.vue';
-
 const props = withDefaults(
 	defineProps<{
 		field: Field;
@@ -80,6 +46,23 @@ watch(
 	}
 );
 
+function isEqual(obj1: any, obj2: any) {
+	if (obj1 === obj2) return true;
+	if (typeof obj1 !== 'object' || typeof obj2 !== 'object') return false;
+	if (obj1 === null || obj2 === null) return false;
+	if (Object.keys(obj1).length !== Object.keys(obj2).length) return false;
+	if (Array.isArray(obj1) !== Array.isArray(obj2)) return false;
+	if (Array.isArray(obj1) && Array.isArray(obj2)) {
+		for (let i = 0; i < obj1.length; i++) {
+			if (!isEqual(obj1[i], obj2[i])) return false;
+		}
+	}
+	for (const key in obj1) {
+		if (!isEqual(obj1[key], obj2[key])) return false;
+	}
+	return true;
+}
+
 function useComputedGroup() {
 	const groupFields = ref<Field[]>(limitFields());
 	const groupValues = ref<Record<string, any>>({});
@@ -112,6 +95,38 @@ function useComputedGroup() {
 }
 </script>
 
+<template>
+	<tab-group
+		v-model="activeIndex"
+		:tab-fields="groupFields"
+		:fields="fields"
+		:values="groupValues"
+		:validation-errors="validationErrors!"
+		class="group-tabs"
+	>
+		<template v-for="(groupField, index) in groupFields" :key="groupField.field">
+			<tab-panel
+				v-if="activeIndex === index"
+				:field="groupField"
+				:fields="fields"
+				:values="groupValues"
+				:initial-values="initialValues"
+				:disabled="disabled"
+				:batch-mode="batchMode"
+				:batch-active-fields="batchActiveFields"
+				:primary-key="primaryKey"
+				:loading="loading"
+				:validation-errors="validationErrors"
+				:badge="badge"
+				:raw-editor-enabled="rawEditorEnabled"
+				:group="field.meta.field"
+				:direction="direction"
+				@apply="$emit('apply', $event)"
+			/>
+		</template>
+	</tab-group>
+</template>
+
 <style scoped lang="scss">
 .group-tabs {
 	.tab-panel {
@@ -119,3 +134,4 @@ function useComputedGroup() {
 	}
 }
 </style>
+

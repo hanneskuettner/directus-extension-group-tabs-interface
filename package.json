@@ -1,7 +1,7 @@
 {
 	"name": "directus-extension-group-tabs-interface",
 	"icon": "extension",
-	"version": "1.2.2",
+	"version": "1.3.0",
 	"license": "GPL-3.0",
 	"repository": {
 		"type": "git",
@@ -22,7 +22,7 @@
 		"type": "interface",
 		"path": "dist/index.js",
 		"source": "src/index.ts",
-		"host": "^9.25.1"
+		"host": "^10.1.0"
 	},
 	"files": [
 		"dist"
@@ -51,12 +51,13 @@
 		"lodash-es": "^4.17.21",
 		"prettier": "^2.8.7",
 		"rollup-plugin-copy": "^3.4.0",
-		"sass": "^1.62.0",
+		"sass": "^1.69.5",
+		"sass-loader": "^13.3.2",
 		"semantic-release": "^21.0.2",
 		"typescript": "^5.0.4"
 	},
 	"peerDependencies": {
-		"@directus/extensions-sdk": "^9.25.3",
+		"@directus/extensions-sdk": "^10.1.14",
 		"vue": "^3.2.47",
 		"vue-i18n": "^9.2.2"
 	},

@@ -1,25 +1,6 @@
-<template>
-	<div :id="`tabpanel-${field.field}`" class="tab-panel">
-		<v-form
-			:initial-values="initialValues"
-			:fields="fieldsInSection"
-			:model-value="values"
-			:primary-key="primaryKey"
-			:group="group"
-			:validation-errors="validationErrors"
-			:loading="loading"
-			:batch-mode="batchMode"
-			:disabled="disabled"
-			:direction="direction"
-			:show-no-visible-fields="false"
-			:show-validation-errors="false"
-			@update:model-value="$emit('apply', $event)"
-		/>
-	</div>
-</template>
 
 <script setup lang="ts">
-import { Field, ValidationError } from '@directus/types';
+import type { Field, ValidationError } from '@directus/types';
 import { toRefs } from 'vue';
 import { useGroupSection } from './composables/use-group-section';
 
@@ -47,6 +28,26 @@ const props = withDefaults(
 
 const { fieldsInSection } = useGroupSection(toRefs(props));
 </script>
+
+<template>
+	<div :id="`tabpanel-${field.field}`" class="tab-panel">
+		<v-form
+			:initial-values="initialValues"
+			:fields="fieldsInSection"
+			:model-value="values"
+			:primary-key="primaryKey"
+			:group="group"
+			:validation-errors="validationErrors"
+			:loading="loading"
+			:batch-mode="batchMode"
+			:disabled="disabled"
+			:direction="direction"
+			:show-no-visible-fields="false"
+			:show-validation-errors="false"
+			@update:model-value="$emit('apply', $event)"
+		/>
+	</div>
+</template>
 
 <style lang="scss" scoped>
 .accordion-section {
@@ -76,3 +77,4 @@ const { fieldsInSection } = useGroupSection(toRefs(props));
 	margin: var(--form-vertical-gap) 0;
 }
 </style>
+
