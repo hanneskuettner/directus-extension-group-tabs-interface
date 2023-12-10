@@ -36,6 +36,7 @@
 		"release": "semantic-release"
 	},
 	"devDependencies": {
+		"@directus/extensions-sdk": "^10.2.0",
 		"@directus/format-title": "^10.0.0",
 		"@directus/types": "^9.25.3",
 		"@directus/utils": "^9.25.3",
@@ -57,7 +58,6 @@
 		"typescript": "^5.0.4"
 	},
 	"peerDependencies": {
-		"@directus/extensions-sdk": "^10.1.14",
 		"vue": "^3.2.47",
 		"vue-i18n": "^9.2.2"
 	},
