@@ -1,3 +1,16 @@
+# [2.0.0](https://github.com/hanneskuettner/directus-extension-group-tabs-interface/compare/v1.2.2...v2.0.0) (2023-12-22)
+
+
+### Bug Fixes
+
+* Make extension work for Directus 10.x (>= 10.7) ([77ef568](https://github.com/hanneskuettner/directus-extension-group-tabs-interface/commit/77ef568ef954146dd3e494cb0047e36382561188))
+* Respect Directus theming ([a7f677a](https://github.com/hanneskuettner/directus-extension-group-tabs-interface/commit/a7f677aafcf58e112c7da8aa2c3f9a62b741982f))
+
+
+### BREAKING CHANGES
+
+* Migrated to @directus/extension-sdk 10.x, this limits this extension to Directus 10.x
+
 ## [1.2.2](https://github.com/hanneskuettner/directus-extension-group-tabs-interface/compare/v1.2.1...v1.2.2) (2023-06-26)
 
 
