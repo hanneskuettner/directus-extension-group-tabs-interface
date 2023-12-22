@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { Field, ValidationError } from '@directus/types';
 import { ref, watch } from 'vue';
+import { isEqual } from 'lodash-es';
 import TabGroup from './tab-group.vue';
 import TabPanel from './tab-panel.vue';
 const props = withDefaults(
@@ -45,23 +46,6 @@ watch(
 		if (includedFieldsWithErrors !== -1) activeIndex.value = includedFieldsWithErrors;
 	}
 );
-
-function isEqual(obj1: any, obj2: any) {
-	if (obj1 === obj2) return true;
-	if (typeof obj1 !== 'object' || typeof obj2 !== 'object') return false;
-	if (obj1 === null || obj2 === null) return false;
-	if (Object.keys(obj1).length !== Object.keys(obj2).length) return false;
-	if (Array.isArray(obj1) !== Array.isArray(obj2)) return false;
-	if (Array.isArray(obj1) && Array.isArray(obj2)) {
-		for (let i = 0; i < obj1.length; i++) {
-			if (!isEqual(obj1[i], obj2[i])) return false;
-		}
-	}
-	for (const key in obj1) {
-		if (!isEqual(obj1[key], obj2[key])) return false;
-	}
-	return true;
-}
 
 function useComputedGroup() {
 	const groupFields = ref<Field[]>(limitFields());
