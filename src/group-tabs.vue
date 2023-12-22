@@ -1,42 +1,9 @@
-<template>
-	<tab-group
-		v-model="activeIndex"
-		:tab-fields="groupFields"
-		:fields="fields"
-		:values="groupValues"
-		:validation-errors="validationErrors!"
-		class="group-tabs"
-	>
-		<template v-for="(groupField, index) in groupFields" :key="groupField.field">
-			<tab-panel
-				v-if="activeIndex === index"
-				:field="groupField"
-				:fields="fields"
-				:values="groupValues"
-				:initial-values="initialValues"
-				:disabled="disabled"
-				:batch-mode="batchMode"
-				:batch-active-fields="batchActiveFields"
-				:primary-key="primaryKey"
-				:loading="loading"
-				:validation-errors="validationErrors"
-				:badge="badge"
-				:raw-editor-enabled="rawEditorEnabled"
-				:group="field.meta.field"
-				:direction="direction"
-				@apply="$emit('apply', $event)"
-			/>
-		</template>
-	</tab-group>
-</template>
-
 <script setup lang="ts">
-import { Field, ValidationError } from '@directus/types';
-import { isEqual } from 'lodash-es';
+import type { Field, ValidationError } from '@directus/types';
 import { ref, watch } from 'vue';
+import { isEqual } from 'lodash-es';
 import TabGroup from './tab-group.vue';
 import TabPanel from './tab-panel.vue';
-
 const props = withDefaults(
 	defineProps<{
 		field: Field;
@@ -112,6 +79,38 @@ function useComputedGroup() {
 }
 </script>
 
+<template>
+	<tab-group
+		v-model="activeIndex"
+		:tab-fields="groupFields"
+		:fields="fields"
+		:values="groupValues"
+		:validation-errors="validationErrors!"
+		class="group-tabs"
+	>
+		<template v-for="(groupField, index) in groupFields" :key="groupField.field">
+			<tab-panel
+				v-if="activeIndex === index"
+				:field="groupField"
+				:fields="fields"
+				:values="groupValues"
+				:initial-values="initialValues"
+				:disabled="disabled"
+				:batch-mode="batchMode"
+				:batch-active-fields="batchActiveFields"
+				:primary-key="primaryKey"
+				:loading="loading"
+				:validation-errors="validationErrors"
+				:badge="badge"
+				:raw-editor-enabled="rawEditorEnabled"
+				:group="field.meta.field"
+				:direction="direction"
+				@apply="$emit('apply', $event)"
+			/>
+		</template>
+	</tab-group>
+</template>
+
 <style scoped lang="scss">
 .group-tabs {
 	.tab-panel {
@@ -119,3 +118,4 @@ function useComputedGroup() {
 	}
 }
 </style>
+

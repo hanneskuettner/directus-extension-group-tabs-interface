@@ -1,7 +1,6 @@
-import { defineInterface } from '@directus/utils';
 import InterfaceGroupTabs from './group-tabs.vue';
 
-export default defineInterface({
+export default {
 	id: 'group-tabs',
 	name: 'Tab Group',
 	description: 'Display fields in a tab group',
@@ -14,4 +13,4 @@ export default defineInterface({
 	localTypes: ['group'],
 	group: 'group',
 	options: [],
-});
+};
