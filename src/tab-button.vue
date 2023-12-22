@@ -1,19 +1,3 @@
-<template>
-	<v-button
-		:id="`tab-${field.field}`"
-		class="tab-button"
-		role="tab"
-		:aria-selected="active ? 'true' : 'false'"
-		:aria-controls="`tabpanel-${field.field}`"
-		small
-	>
-		<span v-if="edited" v-tooltip="t('edited')" class="edit-dot"></span>
-		<span class="field-name">{{ field.name }}</span>
-		<v-chip v-if="badge" x-small>{{ badge }}</v-chip>
-		<v-icon v-if="validationMessage" v-tooltip="validationMessage" class="warning" name="error" small />
-	</v-button>
-</template>
-
 <script lang="ts" setup>
 import { Field, ValidationError } from '@directus/types';
 import { toRefs } from 'vue';
@@ -32,6 +16,22 @@ const props = defineProps<{
 const { edited, validationMessage } = useGroupSection(toRefs(props));
 const { t } = useI18n();
 </script>
+
+<template>
+	<v-button
+		:id="`tab-${field.field}`"
+		class="tab-button"
+		role="tab"
+		:aria-selected="active ? 'true' : 'false'"
+		:aria-controls="`tabpanel-${field.field}`"
+		small
+	>
+		<span v-if="edited" v-tooltip="t('edited')" class="edit-dot"></span>
+		<span class="field-name">{{ field.name }}</span>
+		<v-chip v-if="badge" x-small>{{ badge }}</v-chip>
+		<v-icon v-if="validationMessage" v-tooltip="validationMessage" class="warning" name="error" small />
+	</v-button>
+</template>
 
 <style scoped lang="scss">
 .v-button {

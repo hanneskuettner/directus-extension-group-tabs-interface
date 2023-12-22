@@ -1,8 +1,8 @@
 {
 	"compilerOptions": {
-		"target": "ES2020",
-		"lib": ["ES2019", "DOM"],
-		"module": "esnext",
+		"target": "ES2022",
+		"lib": ["ES2022", "DOM"],
+		"module": "ES2022",
 		"moduleResolution": "node",
 		"strict": true,
 		"noFallthroughCasesInSwitch": true,

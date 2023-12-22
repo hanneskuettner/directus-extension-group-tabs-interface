@@ -1,24 +1,5 @@
-<template>
-	<div>
-		<div role="tablist" class="tab-list" @keydown="onKeyDown">
-			<tab-button
-				v-for="(field, index) in tabFields"
-				ref="buttons"
-				:key="field.field"
-				:field="field"
-				:fields="fields"
-				:values="values"
-				:validation-errors="validationErrors"
-				:active="index === modelValue"
-				@click="$emit('update:modelValue', index)"
-			/>
-		</div>
-		<slot />
-	</div>
-</template>
-
 <script setup lang="ts">
-import { Field, ValidationError } from '@directus/types';
+import type { Field, ValidationError } from '@directus/types';
 import { ref, unref } from 'vue';
 import TabButton from './tab-button.vue';
 
@@ -62,6 +43,25 @@ function onKeyDown(event: KeyboardEvent) {
 	}
 }
 </script>
+
+<template>
+	<div>
+		<div role="tablist" class="tab-list" @keydown="onKeyDown">
+			<tab-button
+				v-for="(field, index) in tabFields"
+				ref="buttons"
+				:key="field.field"
+				:field="field"
+				:fields="fields"
+				:values="values"
+				:validation-errors="validationErrors"
+				:active="index === modelValue"
+				@click="$emit('update:modelValue', index)"
+			/>
+		</div>
+		<slot />
+	</div>
+</template>
 
 <style scoped lang="scss">
 .tab-list {

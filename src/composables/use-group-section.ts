@@ -1,6 +1,5 @@
-import { Field, ValidationError } from '@directus/types';
-import { isNil, merge } from 'lodash-es';
-import { computed, Ref, unref } from 'vue';
+import type { Field, ValidationError } from '@directus/types';
+import { Ref, computed, unref } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 interface UseGroupSectionOptions {
@@ -14,7 +13,7 @@ export function useGroupSection({ field, fields: groupFields, values, validation
 	const { t } = useI18n();
 
 	const fieldsInSection = computed(() => {
-		const fields: Field[] = [merge({}, unref(field), { hideLabel: true })];
+		const fields: Field[] = [Object.assign({}, unref(field), { hideLabel: true })];
 
 		if (unref(field).meta?.special?.includes('group')) {
 			fields.push(...getFieldsForGroup(unref(field).meta?.field, [], unref(groupFields)));
@@ -49,7 +48,7 @@ export function useGroupSection({ field, fields: groupFields, values, validation
 
 function getFieldsForGroup(group: undefined | string, passed: string[] = [], groupFields: Field[]): Field[] {
 	const fieldsInGroup: Field[] = groupFields.filter((field) => {
-		return field.meta?.group === group || (group === null && isNil(field.meta));
+		return field.meta?.group === group || (group === null && !field.meta);
 	});
 
 	for (const field of fieldsInGroup) {
