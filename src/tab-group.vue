@@ -68,8 +68,8 @@ function onKeyDown(event: KeyboardEvent) {
 	display: flex;
 	gap: 0 0.5rem;
 	padding: 2px;
-	border-radius: var(--border-radius-outline);
-	background-color: var(--background-subdued);
+	border-radius: var(--theme--border-radius);
+	background-color: var(--theme--background-subdued);
 	flex-wrap: wrap;
 }
 </style>

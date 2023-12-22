@@ -34,51 +34,41 @@ const { t } = useI18n();
 </template>
 
 <style scoped lang="scss">
-.v-button {
+.tab-button {
 	--v-button-background-color: transparent;
 	--v-button-background-color-hover: transparent;
 	--v-button-border-color: transparent;
 	--v-button-width: unset;
 
-	:deep(.button) {
-		border-color: var(--v-button-border-color);
-
-		.content {
-			overflow: visible;
-		}
-
-		&:focus {
-			--v-button-border-color: var(--primary);
-		}
+	& :deep(.content) {
+		overflow: visible;
 	}
 
 	&[aria-selected='true'] {
-		--v-button-border-color: var(--background-normal-alt);
-		--v-button-background-color: var(--background-normal-alt);
-		--v-button-background-color-hover: var(--background-normal-alt);
+		--v-button-border-color: var(--theme--background-accent);
+		--v-button-background-color: var(--theme--background-accent);
+		--v-button-background-color-hover: var(--theme--background-accent);
 	}
 
 	&:not([aria-selected='true']):hover {
-		--v-button-border-color: var(--background-normal);
-		--v-button-background-color: var(--background-normal);
-		--v-button-background-color-hover: var(--background-normal);
+		color: var(--theme--foreground--accent);
 	}
 
 	&:hover,
 	&[aria-selected='true'] {
 		.field-name,
 		.icon {
-			color: var(--foreground-normal-alt);
+			color: var(--theme--foreground-accent);
 		}
 
 		.edit-dot {
-			background-color: var(--foreground-normal);
+			background-color: var(--theme--foreground);
 		}
 	}
 
 	.field-name,
 	.icon {
-		color: var(--foreground-normal);
+		color: var(--theme--foreground);
 		transition: color var(--fast) var(--transition);
 	}
 
@@ -93,7 +83,7 @@ const { t } = useI18n();
 		display: block;
 		width: 4px;
 		height: 4px;
-		background-color: var(--foreground-subdued);
+		background-color: var(--theme--foreground-subdued);
 		border-radius: 4px;
 		content: '';
 	}
@@ -101,6 +91,6 @@ const { t } = useI18n();
 
 .warning {
 	margin-left: 8px;
-	color: var(--danger);
+	color: var(--theme--danger);
 }
 </style>

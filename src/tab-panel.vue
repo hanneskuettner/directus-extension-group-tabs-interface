@@ -47,32 +47,3 @@ const { fieldsInSection } = useGroupSection(toRefs(props));
 		/>
 	</div>
 </template>
-
-<style lang="scss" scoped>
-.accordion-section {
-	border-top: var(--border-width) solid var(--border-normal);
-
-	&:last-child {
-		border-bottom: var(--border-width) solid var(--border-normal);
-	}
-}
-
-.icon {
-	margin-right: 12px;
-	transform: rotate(-90deg);
-	transition: transform var(--fast) var(--transition);
-
-	&.active {
-		transform: rotate(0);
-	}
-}
-
-.warning {
-	margin-left: 8px;
-	color: var(--danger);
-}
-
-.fields {
-	margin: var(--form-vertical-gap) 0;
-}
-</style>

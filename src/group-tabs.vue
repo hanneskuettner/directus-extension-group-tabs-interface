@@ -114,7 +114,7 @@ function useComputedGroup() {
 <style scoped lang="scss">
 .group-tabs {
 	.tab-panel {
-		margin-top: var(--form-horizontal-gap);
+		margin-top: var(--theme--form--row-gap);
 	}
 }
 </style>
