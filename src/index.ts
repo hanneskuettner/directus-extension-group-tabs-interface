@@ -12,5 +12,22 @@ export default {
 	types: ['alias'],
 	localTypes: ['group'],
 	group: 'group',
-	options: [],
+	options: [
+		{
+			field: 'fillWidth',
+			type: 'boolean',
+			name: 'Overwrite Group Width',
+			meta: {
+				interface: 'boolean',
+				note: 'Normally groups can not fill the width of the page. This option allows you to overwrite that.',
+				options: {
+					label: 'Fill Width',
+				},
+				width: 'half',
+			},
+			schema: {
+				default_value: false,
+			},
+		},
+	],
 };

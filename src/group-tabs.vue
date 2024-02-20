@@ -19,6 +19,7 @@ const props = withDefaults(
 		badge?: string;
 		rawEditorEnabled?: boolean;
 		direction?: string;
+		fillWidth?: boolean;
 	}>(),
 	{
 		batchActiveFields: () => [],
@@ -87,6 +88,7 @@ function useComputedGroup() {
 		:values="groupValues"
 		:validation-errors="validationErrors!"
 		class="group-tabs"
+		:class="fillWidth && 'fill'"
 	>
 		<template v-for="(groupField, index) in groupFields" :key="groupField.field">
 			<tab-panel

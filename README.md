@@ -29,3 +29,10 @@ When creating a new field you can select `Tab Group` in the `Groups` section.
 
 Alternatively you can change the interface of an existing group field in the
 `Interface` section.
+
+### Options
+
+- `Overwrite Group Width`: If checked, force Directus to display the tab list in the "Fill Width" mode.
+Normally, the width option is not available for groups, but so far no problems have been encountered. Please open an
+issue if you encounter any visual bugs.
+
