@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/hanneskuettner/directus-extension-group-tabs-interface/compare/v2.0.1...v2.1.0) (2024-02-20)
+
+
+### Features
+
+* Add option to display the tab list over the full width of the page ([523cc3b](https://github.com/hanneskuettner/directus-extension-group-tabs-interface/commit/523cc3bf2c87718ce4ef755cedaacd090d5ca991))
+
 ## [2.0.1](https://github.com/hanneskuettner/directus-extension-group-tabs-interface/compare/v2.0.0...v2.0.1) (2024-02-20)
 
 
