@@ -19,6 +19,7 @@ const { t } = useI18n();
 
 <template>
 	<v-button
+		v-if="!field.meta?.hidden"
 		:id="`tab-${field.field}`"
 		class="tab-button"
 		role="tab"
