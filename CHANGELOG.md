@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/hanneskuettner/directus-extension-group-tabs-interface/compare/v2.0.0...v2.0.1) (2024-02-20)
+
+
+### Bug Fixes
+
+* Respect "Hidden on Detail" setting of section fields ([57499a0](https://github.com/hanneskuettner/directus-extension-group-tabs-interface/commit/57499a0233d26048e8843bc02ef7e2ea88ce84af))
+
 # [2.0.0](https://github.com/hanneskuettner/directus-extension-group-tabs-interface/compare/v1.2.2...v2.0.0) (2023-12-22)
 
 
