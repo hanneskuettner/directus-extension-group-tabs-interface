@@ -5,8 +5,8 @@ This interface allows you to group fields into tabs as an alternative to
 the default accordion group.
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./docs/screenshot-dark.png">
-  <img alt="Screenshot of the tab group interface" src="./docs/screenshot-light.png">
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/hanneskuettner/directus-extension-group-tabs-interface/raw/main/docs/screenshot-dark.png">
+  <img alt="Screenshot of the tab group interface" src="https://github.com/hanneskuettner/directus-extension-group-tabs-interface/raw/main/docs/screenshot-light.png">
 </picture>
 
 ## Installation
