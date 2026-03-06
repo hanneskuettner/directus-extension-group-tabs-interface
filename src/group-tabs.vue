@@ -20,6 +20,7 @@ const props = withDefaults(
 		rawEditorEnabled?: boolean;
 		direction?: string;
 		fillWidth?: boolean;
+		collabContext?: Record<string, unknown>;
 	}>(),
 	{
 		batchActiveFields: () => [],
@@ -107,6 +108,7 @@ function useComputedGroup() {
 				:raw-editor-enabled="rawEditorEnabled"
 				:group="field.meta.field"
 				:direction="direction"
+				:collab-context="collabContext"
 				@apply="$emit('apply', $event)"
 			/>
 		</template>

@@ -18,6 +18,7 @@ const props = withDefaults(
 		group: string;
 		multiple?: boolean;
 		direction?: string;
+		collabContext?: Record<string, unknown>;
 	}>(),
 	{
 		batchActiveFields: () => [],
@@ -41,6 +42,7 @@ const { fieldsInSection } = useGroupSection(toRefs(props));
 			:batch-mode="batchMode"
 			:disabled="disabled"
 			:direction="direction"
+			:collab-context="collabContext"
 			:show-no-visible-fields="false"
 			:show-validation-errors="false"
 			@update:model-value="$emit('apply', $event)"
