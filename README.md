@@ -1,3 +1,22 @@
+# ⚠️ Deprecation Notice
+ 
+**This extension is deprecated and no longer maintained.**
+ 
+The Tab Group interface originally provided by this community extension has been incorporated into **Directus Core** as of [**version 11.17.1**](https://github.com/directus/directus/releases/tag/v11.17.1). If you are running Directus 11.17.1 or later, you no longer need this extension — the tab group functionality is available out of the box.
+ 
+### What should I do?
+ 
+- **Upgrade Directus** to version 11.17.1 or later to use the built-in tab group interface.
+- **Remove this extension** from your project once you have upgraded, either by uninstalling from the market place, or if installed via package manager:
+  ```sh
+  # Using pnpm
+  pnpm remove directus-extension-group-tabs-interface
+  # Using yarn
+  yarn remove directus-extension-group-tabs-interface
+  # Using npm
+  npm uninstall directus-extension-group-tabs-interface
+  ```
+
 # Directus Tab Group Interface
 
 A tab group interface for Directus.
